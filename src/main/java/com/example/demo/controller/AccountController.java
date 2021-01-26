@@ -4,6 +4,7 @@ import com.example.demo.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,11 @@ public class AccountController {
     AccountRepository accountRepository;
 
     //wired to the Repository
+
+    @GetMapping({"","/","/index","/index.html"})
+    public String index(Model model) {
+        return "/index";
+    }
 
     //All Accounts
     @GetMapping("/accounts")
