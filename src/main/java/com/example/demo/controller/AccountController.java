@@ -76,7 +76,7 @@ public class AccountController {
     @DeleteMapping("/accounts/{accountId}")
     public ResponseEntity<HttpStatus> deleteAccount(@PathVariable("accountId") int accountId) {
         accountRepository.deleteById(accountId);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 
